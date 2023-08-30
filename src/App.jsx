@@ -85,7 +85,7 @@ function App() {
 
               <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="relative ml-3">
-                  <div>
+                  <div className="sm:hidden md:block">
                     <button
                       type="button"
                       class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -110,43 +110,43 @@ function App() {
 
         <div>{searched.Poster}</div>
 
-        <div className="pt-16">
+        <div className="pt-16 ">
           {movie?.map((pack) => {
             const { Title, Poster, Year, Type } = pack;
             return (
               <>
                 <div className="">
-                  <div className="container w-90 mx-auto">
-                    <div className="flex py-10 border-gray-900">
+                  <div className="container w-100 mx-auto">
+                    <div className=" py-10 border-gray-900 md:flex sm:block ">
                       <img
-                        className="rounded-lg border-white border bg-fixed hover:scale-105 duration-300"
+                        className="rounded-lg sm:mr-9 border-red-400 boxsh border hover:scale-105 duration-300"
                         src={Poster}
                         alt=""
-                      />
-                      <div className="py-20 px-5 hover:scale-95 duration-300">
+                      /> 
+                      <div className="py-20 px-5 hover:scale-95 sm:py10 duration-300">
                         <a href="">
-                          <h1 className=" font-bold text-3xl text-white">
+                          <h1 className=" font-bold text-3xl text-white sm:text-center md:text-start">
                             {" "}
                             {Title}
                           </h1>
                         </a>
-                        <h2 className="text-2xl py-2 font-medium text-red-400">
+                        <h2 className="text-2xl py-2 font-medium text-red-400 sm:text-center md:text-start">
                           Releas : {Year}
                         </h2>
-                        <h2 className="text-white uppercase">{Type}</h2>
-                        <h3 className="text-1xl font-semibold text-white pt-2">
+                        <h2 className="text-white md:text-start uppercase sm:text-center">{Type}</h2>
+                        <h3 className="text-1xl font-semibold text-white pt-2 sm:text-center md:text-start">
                           Description
                         </h3>
-                        <p className="text-white">
+                        <p className="text-white sm:text-center md:text-start">
                           Lorem ipsum dolor, sit amet consectetur adipisicing
                           elit. Reiciendis fugit illum sequi quo suscipit nulla,
                           delectus repudiandae qui reprehenderit quae asperiores
                           eligendi quaerat laborum recusandae dolores dolore
                           quibusdam neque ipsum.
                         </p>
-                        <h3 className="pt-3 text-white">
+                        <h3 className="pt-3 text-white sm:text-center md:text-start">
                           Rating |{" "}
-                          <span className="font-bold text-red-500">12+</span>
+                          <span className="font-bold text-red-500 md:text-start">12+</span>
                         </h3>
                       </div>
                     </div>
