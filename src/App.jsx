@@ -23,7 +23,7 @@ function App() {
       console.log(data);
       setMovie(data.Search);
       toast.success('Here are your movies', {
-        position: "bottom-left",
+        position: "bottom-right",
         autoClose: 200,
         hideProgressBar: false,
         closeOnClick: true,
@@ -31,10 +31,10 @@ function App() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        });
+      });
 
 
-        
+
 
     } catch (error) {
       console.log(error);
@@ -47,11 +47,11 @@ function App() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        })
+      })
     }
 
 
-   
+
   };
 
   return (
@@ -67,7 +67,7 @@ function App() {
               </div>
 
               <div>
-                <form className="bg-white rounded-sm px-3 py-2 border-red-400 ">
+                <form className="bg-white rounded-sm px-3 py-2 hover:border-red-400 border hover:scale-105  duration-700">
                   <input
                     className="outline-none"
                     type="text"
@@ -77,7 +77,7 @@ function App() {
                   />
                   <button onClick={hand}>
                     <i class="fa-solid fa-magnifying-glass" onClick={() => {
-                    
+
                     }}></i>
                   </button>
                 </form>
@@ -119,11 +119,11 @@ function App() {
                   <div className="container w-90 mx-auto">
                     <div className="flex py-10 border-gray-900">
                       <img
-                        className="rounded-lg border-white border bg-fixed"
+                        className="rounded-lg border-white border bg-fixed hover:scale-105 duration-300"
                         src={Poster}
                         alt=""
                       />
-                      <div className="py-20 px-5">
+                      <div className="py-20 px-5 hover:scale-95 duration-300">
                         <a href="">
                           <h1 className=" font-bold text-3xl text-white">
                             {" "}

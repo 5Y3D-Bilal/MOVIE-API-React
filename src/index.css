@@ -2,17 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    font-family: 'poppins';
+* {
+  font-family: "poppins";
 }
 
-#main{
-    background-color: rgb(34, 34, 34);
-    
+#main {
+  background-color: rgb(91, 91, 91);
 }
 
-.img2{
-    background-attachment: fixed;
+.img2 {
+  background-attachment: fixed;
 }
-
