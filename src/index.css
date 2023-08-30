@@ -9,5 +9,10 @@
 
 #main{
     background-color: rgb(34, 34, 34);
+    
+}
+
+.img2{
+    background-attachment: fixed;
 }
 
