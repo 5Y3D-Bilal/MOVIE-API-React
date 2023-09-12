@@ -9,18 +9,17 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [searched, setSearched] = useState("");
   const [movied, setMovieD] = useState("");
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("lighttheme");
 
-  const draktheme = () => {
-    document.getElementById("main").style.backgroundColor = "black";
-    document.getElementById("main").style.color = "white";
-    document.getElementById("nav").style.backgroundColor = "rgb(91, 91, 91)";
-  };
+  useEffect(() => {
+    document.body.className = color;
+  }, [color]);
 
-  const lighttheme = () => {
-    document.getElementById("main").style.backgroundColor = "white";
-    document.getElementById("main").style.color = "black";
-  };
+  const mode = ()=>{
+    color === "darktheme" ? setColor("lighttheme"):
+    setColor("darktheme")
+  }
+
   useEffect(() => {
     async function news() {
       const res1 = await fetch(api);
@@ -40,27 +39,6 @@ function App() {
     const data = await res.json();
     console.log(data);
     setMovie(data.Search);
-    // toast.success("Here are your movies", {
-    //   position: "bottom-right",
-    //   autoClose: 200,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "dark",
-    // });
-
-    // toast.error("movie not foundwdw", {
-    //   position: "bottom-left",
-    //   autoClose: 200,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "dark",
-    // });
   };
 
   return (
@@ -91,8 +69,8 @@ function App() {
                   </button>
                 </form>
               </div>
-              <button onClick={draktheme} className="text-white pl-3 pr-1-">
-                <i className="fa-solid fa-moon"></i>
+              <button onClick={mode} className="text-white pl-3 pr-1-">
+                <i className="fa-solid fa-moon mommmm"></i>
               </button>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div className="relative ml-3">
